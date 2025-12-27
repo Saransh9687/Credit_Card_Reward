@@ -14,7 +14,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerDTO {
-    private Integer customerId;
+
+    private Long customerId;
     @NotNull(message = "{customer.name.notnull}")
     private String customerName;
     @NotNull(message = "{customer.email.notnull}")

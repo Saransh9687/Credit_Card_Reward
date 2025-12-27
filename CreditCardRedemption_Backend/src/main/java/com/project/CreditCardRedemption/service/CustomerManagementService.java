@@ -8,9 +8,9 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface CustomerManagementService {
-    Integer createCustomer(CustomerDTO customer) throws RewardsException;
+    Long createCustomer(CustomerDTO customer) throws RewardsException;
 
-    Integer softDeleteCustomer(Integer customerId) throws RewardsException;
+    Long softDeleteCustomer(Long customerId) throws RewardsException;
 
     Page<Customer> findAllCustomer(int pageNumber);
 

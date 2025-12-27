@@ -26,15 +26,15 @@ public class CustomerManagementApi {
 
     @PostMapping("/project")
     public ResponseEntity<String> allocateProject (@Valid @RequestBody CustomerDTO customerDTO) throws RewardsException {
-        Integer id = customerManagementService.createCustomer(customerDTO);
+        Long id = customerManagementService.createCustomer(customerDTO);
 
         return new ResponseEntity<>(environment.getProperty("API.ALLOCATION_SUCCESS")+ id, HttpStatus.CREATED);
 
     }
 
     @PutMapping("/customer/{findId}")
-    public ResponseEntity<String> softDeleteCustomer(@Valid @PathVariable Integer findId) throws RewardsException {
-        Integer id = customerManagementService.softDeleteCustomer(findId);
+    public ResponseEntity<String> softDeleteCustomer(@Valid @PathVariable Long findId) throws RewardsException {
+        Long id = customerManagementService.softDeleteCustomer(findId);
 
         return new ResponseEntity<>(environment.getProperty("API.SOFT_DELETE_SUCCESS")+ id, HttpStatus.OK);
     }

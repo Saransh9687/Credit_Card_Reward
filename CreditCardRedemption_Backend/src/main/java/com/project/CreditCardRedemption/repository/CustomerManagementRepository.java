@@ -9,8 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
-public interface CustomerManagementRepository extends JpaRepository<Customer, Integer> {
-    Customer findByCustomerId(Integer customerId);
+public interface CustomerManagementRepository extends JpaRepository<Customer, Long> {
+    Customer findByCustomerId(Long customerId);
 
     boolean existsByCustomerEmail(@NotNull(message = "{customer.email.notnull}") @Pattern(
             regexp = "^[A-Za-z0-9._%+-]+@(gmail\\.com|tcs\\.com)$",

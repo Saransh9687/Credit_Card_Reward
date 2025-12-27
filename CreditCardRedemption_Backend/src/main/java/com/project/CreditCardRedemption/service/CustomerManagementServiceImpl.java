@@ -17,7 +17,7 @@ public class CustomerManagementServiceImpl implements CustomerManagementService 
     CustomerManagementRepository customerManagementRepository;
 
     @Override
-    public Integer createCustomer(CustomerDTO customer) throws RewardsException {
+    public Long createCustomer(CustomerDTO customer) throws RewardsException {
         if(customerManagementRepository.existsByCustomerEmail(customer.getCustomerEmail())) {
             throw new RewardsException("Customer email is already exist");
         }
@@ -39,7 +39,7 @@ public class CustomerManagementServiceImpl implements CustomerManagementService 
     }
 
     @Override
-    public Integer softDeleteCustomer(Integer customerId) throws RewardsException {
+    public Long softDeleteCustomer(Long customerId) throws RewardsException {
         Customer cust = customerManagementRepository.findByCustomerId(customerId);
         if(cust == null){
             throw new RewardsException("Customer not found");
