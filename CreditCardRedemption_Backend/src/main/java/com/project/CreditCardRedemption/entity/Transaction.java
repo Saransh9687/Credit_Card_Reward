@@ -12,16 +12,16 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long transanction_id;
+    private Long transactionId;
 
-    private double transaction_amount;
+    private double transactionAmount;
 
-    private LocalDate transaction_Date;
+    private LocalDate transactionDate;
 
-    private Long reward_points;
+    private Long rewardPoints;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private CreditCard credit_card;
+    private CreditCard creditCard;
 
     private boolean processed;
 
