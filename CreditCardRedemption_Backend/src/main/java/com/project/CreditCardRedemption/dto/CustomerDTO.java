@@ -1,6 +1,8 @@
 package com.project.CreditCardRedemption.dto;
 
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +23,10 @@ public class CustomerDTO {
             message = "Email must be a valid Gmail or TCS email address"
     )
     private String customerEmail;
+    @Past(message = "{customer.dateOfBirth.notnull}")
+    private LocalDate dateOfBirth;
     @NotNull(message = "{customer.localDate.notnull}")
+    @PastOrPresent(message = "{customer.dateOfJoining.notnull}")
     private LocalDate dateOfJoining;
     @NotNull(message = "{customer.phoneNumber.notnull}")
     @Pattern(

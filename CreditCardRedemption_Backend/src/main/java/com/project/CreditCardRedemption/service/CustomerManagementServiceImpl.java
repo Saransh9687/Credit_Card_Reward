@@ -29,6 +29,7 @@ public class CustomerManagementServiceImpl implements CustomerManagementService 
         cust.setCustomerId(customer.getCustomerId());
         cust.setCustomerName(customer.getCustomerName());
         cust.setCustomerEmail(customer.getCustomerEmail());
+        cust.setDateOfBirth(customer.getDateOfBirth());
         cust.setDateOfJoining(customer.getDateOfJoining());
         cust.setPhoneNumber(customer.getPhoneNumber());
 
@@ -65,6 +66,7 @@ public class CustomerManagementServiceImpl implements CustomerManagementService 
                 .map(c -> new CustomerDTO(
                         c.getCustomerId(), c.getCustomerName(),
                         c.getCustomerEmail(),
+                        c.getDateOfBirth(),
                         c.getDateOfJoining(),
                         c.getPhoneNumber()
                 ))

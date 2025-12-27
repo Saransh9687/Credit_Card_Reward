@@ -20,6 +20,7 @@ public class Customer {
     private Integer customerId;
     private String customerName;
     private String customerEmail;
+    private LocalDate dateOfBirth;
     private LocalDate dateOfJoining;
     private String phoneNumber;
     private boolean deleted = false;
