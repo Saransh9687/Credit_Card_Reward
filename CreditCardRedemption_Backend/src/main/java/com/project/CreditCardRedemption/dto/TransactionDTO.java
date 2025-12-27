@@ -5,10 +5,10 @@ import lombok.Data;
 import java.time.LocalDate;
 
 @Data
-public class TransacationDTO {
-    private Long transacationId;
-    private double transacationAmount;
-    private LocalDate transacationDate;
+public class TransactionDTO {
+    private Long transactionId;
+    private double transactionAmount;
+    private LocalDate transactionDate;
     private Long rewardPoints;
     private CreditCardDTO creditCardDTO;
     private boolean processed;

@@ -10,8 +10,8 @@ public class RedeemItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long item_id;
-    private String item_name;
-    private String item_category;
-    private Long item_amount;
+    private Long itemId;
+    private String itemName;
+    private String itemCategory;
+    private Long itemAmount;
 }
