@@ -15,7 +15,7 @@ public class CESUsers {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ces_user_id;
+    private Long cesUserId;
 
     private String username;
     private String password;

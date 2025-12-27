@@ -12,14 +12,14 @@ public class RedemptionHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long redemption_history_id;
+    private Long redemptionHistoryId;
 
-    private Long redeemed_points;
+    private Long redeemedPoints;
 
-    private LocalDate redeemed_date;
+    private LocalDate redeemedDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private CreditCard  credit_card;
+    private CreditCard  creditCard;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Customer customer;
