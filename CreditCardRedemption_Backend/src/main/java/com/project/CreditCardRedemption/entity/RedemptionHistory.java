@@ -19,6 +19,7 @@ public class RedemptionHistory {
     private LocalDate redeemedDate;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "card_id")
     private CreditCard  creditCard;
 
     @ManyToOne(fetch = FetchType.LAZY)

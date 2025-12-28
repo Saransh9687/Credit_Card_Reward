@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -16,23 +17,30 @@ import java.time.LocalDate;
 public class CustomerDTO {
 
     private Long customerId;
-    @NotNull(message = "{customer.name.notnull}")
+
+    @NotNull(message = "{customer.name.required}")
     private String customerName;
-    @NotNull(message = "{customer.email.notnull}")
+
+    @NotNull(message = "{customer.email.required}")
     @Pattern(
             regexp = "^[A-Za-z0-9._%+-]+@(gmail\\.com|tcs\\.com)$",
-            message = "Email must be a valid Gmail or TCS email address"
+            message = "{customer.email.invalid}"
     )
     private String customerEmail;
-    @Past(message = "{customer.dateOfBirth.notnull}")
+
+    @Past(message = "{customer.dob.past}")
     private LocalDate dateOfBirth;
-    @NotNull(message = "{customer.localDate.notnull}")
-    @PastOrPresent(message = "{customer.dateOfJoining.notnull}")
+
+    @NotNull(message = "{customer.doj.required}")
+    @PastOrPresent(message = "{customer.doj.pastOrPresent}")
     private LocalDate dateOfJoining;
-    @NotNull(message = "{customer.phoneNumber.notnull}")
+
+    @NotNull(message = "{customer.phoneNumber.required}")
     @Pattern(
             regexp = "^[0-9]{10}$",
-            message = "Phone number must be exactly 10 digits"
+            message = "{customer.phoneNumber.invalid}"
     )
     private String phoneNumber;
+
+
 }

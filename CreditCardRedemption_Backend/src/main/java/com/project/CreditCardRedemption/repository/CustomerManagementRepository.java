@@ -12,12 +12,12 @@ import java.util.List;
 public interface CustomerManagementRepository extends JpaRepository<Customer, Long> {
     Customer findByCustomerId(Long customerId);
 
-    boolean existsByCustomerEmail(@NotNull(message = "{customer.email.notnull}") @Pattern(
+    boolean existsByCustomerEmail(@NotNull(message = "{customer.email.invalid}") @Pattern(
             regexp = "^[A-Za-z0-9._%+-]+@(gmail\\.com|tcs\\.com)$",
             message = "Email must be a valid Gmail or TCS email address"
     ) String customerEmail);
 
-    boolean existsByPhoneNumber(@NotNull(message = "{customer.phoneNumber.notnull}") @Pattern(
+    boolean existsByPhoneNumber(@NotNull(message = "{customer.phoneNumber.required}") @Pattern(
             regexp = "^[0-9]{10}$",
             message = "Phone number must be exactly 10 digits"
     ) String phoneNumber);

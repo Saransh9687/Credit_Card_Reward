@@ -14,15 +14,17 @@ public class CreditCard {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cardId;
 
-    private Long rewardPoint;
+    private Long rewardPoint =0L;
+
 
     @Column(unique = true, nullable = false)
     private String cardNumber;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="customer_id")
     private Customer customer;
 
-    private boolean isActive;
+    private boolean isActive =true;
 
 
 

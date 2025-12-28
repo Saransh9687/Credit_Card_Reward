@@ -12,8 +12,9 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
     private static final org.apache.logging.log4j.Logger log = LogManager.getLogger(LoggingAspect.class);
 
-    @AfterThrowing(pointcut = "execution(public * com.tcs.tcsInternssystem.service.ProjectAllocationServiceImpl.*(..))",throwing = "exception")
+    @AfterThrowing(pointcut = "execution(public * com.project.CreditCardRedemption.service..*(..))",throwing = "exception")
     public void logServiceException(JoinPoint joinPoint, RewardsException exception) {
         log.error("Exception occurs in ProjectAllocationServiceImpl method {}: ", joinPoint.getSignature().getName(), exception);
     }
 }
+

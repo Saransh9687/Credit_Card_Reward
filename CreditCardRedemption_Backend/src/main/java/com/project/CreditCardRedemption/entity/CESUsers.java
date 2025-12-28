@@ -17,8 +17,11 @@ public class CESUsers {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cesUserId;
 
+    @Column(unique = true,nullable = false)
     private String username;
+
     private String password;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 }
